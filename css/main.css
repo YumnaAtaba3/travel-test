@@ -1,0 +1,209 @@
+        /* General Styles */
+        .category h6,
+        .selling h6 {
+            color: #5e6282;
+            letter-spacing: 2px;
+        }
+
+        .category h2,
+        .selling h2 {
+            color: #14183e;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        .category-card {
+            transition: all 0.3s ease;
+            position: relative;
+            max-width: 220px;
+        }
+
+        .category-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+        }
+
+        .category-card img {
+            transition: transform 0.3s ease;
+        }
+
+        .category-card:hover img {
+            transform: scale(1.1);
+        }
+
+        .fw-semibold {
+            margin: 5px;
+            font-size: 16px;
+        }
+
+        /* Top Destinations */
+        .destination-card {
+            width: 300px;
+            border-radius: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            margin: 0 auto;
+            background-color: #fff;
+            position: relative;
+        }
+
+        .destination-card img {
+            width: 100%;
+            height: 320px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .destination-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+        }
+
+        .destination-info {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 15px;
+            background-color: #fff;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+        }
+
+        .custom-badge {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .custom-badge img {
+            width: 60%;
+            height: auto;
+        }
+
+        .bi-heart {
+            font-size: 1.25rem;
+            cursor: pointer;
+            transition: color 0.2s ease;
+        }
+
+        .bi-heart:hover {
+            color: #dc3545;
+        }
+
+        /* Booking Section RTL/LTR Fixes */
+        [dir="rtl"] .booking-step {
+            flex-direction: row;
+            text-align: right;
+            justify-content: flex-start;
+        }
+
+        [dir="rtl"] .booking-step .me-3 {
+            margin-right: 0 !important;
+            margin-left: 1rem !important;
+        }
+
+        [dir="rtl"] .booking h2,
+        [dir="rtl"] .booking h6,
+        [dir="rtl"] .booking p {
+            text-align: right;
+        }
+
+        [dir="rtl"] .booking .card {
+            text-align: right;
+        }
+
+        [dir="rtl"] .booking .ms-auto {
+            margin-left: 0 !important;
+            margin-right: auto !important;
+        }
+
+        [dir="ltr"] .booking-step {
+            flex-direction: row;
+            text-align: left;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .destination-card {
+                width: 100%;
+                max-width: 270px;
+            }
+
+            .destination-card img {
+                height: 250px;
+            }
+        }
+
+
+
+
+        .airline-img:not(.expedia) {
+            filter: grayscale(100%) brightness(0);
+        }
+
+
+        .subscribe-bg {
+            background-image: url('../assets/email/Rectangle 164.svg');
+            background-repeat: no-repeat;
+            min-height: 250px;
+            color: #5E6282;
+            position: relative;
+            padding: 2rem;
+            border: none;
+            outline: none;
+            box-shadow: none;
+        }
+
+        .subscribe-bg * {
+            position: relative;
+            z-index: 1;
+            color: #5E6282;
+        }
+
+        .subscribe-input {
+            width: 300px;
+        }
+
+        .subscribe button {
+            background-color: #FF7D68;
+            border: none;
+            color: #fff;
+            font-size: 14px;
+        }
+
+                 /* Common style for social icons */
+                 .social-icon {
+                     width: 30px;
+                     height: 30px;
+                     border-radius: 50%;
+                     background: #fff;
+                     /* white background for Facebook and Twitter */
+                     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                     display: flex;
+                     justify-content: center;
+                     align-items: center;
+                     transition: transform 0.3s;
+                 }
+        
+                 .social-icon:hover {
+                     transform: scale(1.1);
+                 }
+        
+                 /* Instagram gradient */
+                 .instagram-bg {
+                     background: conic-gradient(from 180deg at 50% 50%,
+                             #B8D2F1 0deg,
+                             #F289AA 60deg,
+                             #C68BF0 106.09deg,
+                             #D164DA 153.75deg,
+                             #C963E8 221.25deg,
+                             #BFC2E8 258.75deg,
+                             #FFC999 288.75deg,
+                             #D0D8C9 315deg,
+                             #BAD0F1 334.13deg,
+                             #CED8CB 358.97deg,
+                             rgba(255, 255, 255, 0) 360deg);
+                 }
+

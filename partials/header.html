@@ -1,0 +1,54 @@
+<header class="py-4">
+    <div class="container">
+        <nav class="d-flex align-items-center justify-content-between">
+            <a class="site-logo d-flex align-items-center text-decoration-none" href="#">
+                <img src="assets/header/Logo.svg" alt="Jadoo logo" />
+            </a>
+
+            <!-- Nav (desktop) -->
+            <ul class="nav d-none d-md-flex align-items-center gap-5">
+                <li class="nav-item"><a class="nav-link" href="#" data-i18n="destinations">Destinations</a></li>
+                <li class="nav-item"><a class="nav-link" href="#" data-i18n="hotels">Hotels</a></li>
+                <li class="nav-item"><a class="nav-link" href="#" data-i18n="flights">Flights</a></li>
+                <li class="nav-item"><a class="nav-link" href="#" data-i18n="bookings">Bookings</a></li>
+            </ul>
+
+            <!-- Right actions -->
+            <div class="d-flex align-items-center gap-5">
+                <a class="nav-link d-none d-md-block" href="#" data-i18n="login">Login</a>
+                <button class="btn btn-signup" data-i18n="signup">Sign up</button>
+
+                <!-- Language dropdown -->
+                <div class="dropdown ms-2 d-none d-md-block">
+                    <button id="langToggle" class="btn btn-sm btn-light d-none d-md-block"
+                        data-i18n="language">EN</button>
+                </div>
+
+                <!-- Mobile menu button -->
+                <button class="btn d-md-none btn-light" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#mobileMenu" aria-controls="mobileMenu">
+                    ☰
+                </button>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<!-- MOBILE MENU -->
+<div class="offcanvas offcanvas-start" tabindex="-1" id="mobileMenu" aria-labelledby="mobileMenuLabel">
+    <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="mobileMenuLabel" data-i18n="menu">Menu</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+        <ul class="list-unstyled">
+            <li><a class="d-block py-2" href="#" data-i18n="destinations">Destinations</a></li>
+            <li><a class="d-block py-2" href="#" data-i18n="hotels">Hotels</a></li>
+            <li><a class="d-block py-2" href="#" data-i18n="flights">Flights</a></li>
+            <li><a class="d-block py-2" href="#" data-i18n="bookings">Bookings</a></li>
+        </ul>
+        <hr>
+        <a class="d-block py-2" href="#" data-i18n="login">Login</a>
+        <a class="d-block py-2" href="#" data-i18n="signup">Sign up</a>
+    </div>
+</div>

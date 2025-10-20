@@ -1,0 +1,54 @@
+ .booking h2 {
+            color: #14183e;
+            font-family: 'Times New Roman', Times, serif;
+            max-width: 400px;
+
+        }
+
+.custom-badge img {
+    width: 18px;
+    height: 18px;
+}
+
+.card .progress {
+    background-color: #f1f1f1;
+    border-radius: 4px;
+}
+
+.card .progress-bar {
+    border-radius: 4px;
+
+    background-color: #8A79DF;
+}
+
+
+.booking .position-absolute {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+.booking .position-absolute:hover {
+    transform: translateY(-3px);
+}
+
+.booking .position-absolute img {
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+/* RTL Support: Flip "Trip to Rome" floating card */
+[dir="rtl"] .booking .position-absolute {
+    right: auto !important;
+    left: -80px !important;
+    direction: rtl;
+    text-align: right;
+}
+
+[dir="rtl"] .booking .position-absolute .d-flex {
+    flex-direction: row-reverse !important;
+}
+
+[dir="rtl"] .booking .position-absolute .me-3 {
+    margin-right: 0 !important;
+    margin-left: 1rem !important;
+}

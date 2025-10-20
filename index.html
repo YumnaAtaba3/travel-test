@@ -1,11 +1,148 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document test</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title data-i18n="title">Travel Landing</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/header.css" />
+    <link rel="stylesheet" href="css/hero.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/booking.css" />
+    <link rel="stylesheet" href="css/Testimonials.css" />
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" />
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 </head>
+
 <body>
-    
+
+
+    <!-- Hero Section -->
+    <section class="hero-wrapper">
+
+            <!-- Header -->
+            <div id="header-container"></div>
+        <img src="assets/plane.svg" alt="Plane" class="plane" />
+        <img src="assets/plane.svg" alt="Plane" class="plane plane2" />
+
+        <section class="hero container">
+            <div class="hero-text">
+                <h6 data-i18n="heroSubtitle">Best destinations around the world</h6>
+                <h1>
+                    <span data-i18n="heroTitle1">Travel,</span>
+                    <span class="underline-enjoy" data-i18n="heroTitle2">enjoy</span><br />
+                    <span data-i18n="heroTitle3">and live a new and full life</span>
+                </h1>
+                <p data-i18n="heroDescription">
+                    Built Wicket longer admire do barton vanity itself do in it. Preferred to sportsmen it engrossed
+                    listening.
+                    Park gate sell they west hard for the.
+                </p>
+                <div class="d-flex align-items-center gap-4">
+                    <button class="btn-primary-custom" data-i18n="heroBtnMore">Find out more</button>
+                    <button class="btn-demo">
+                        <i class="bi bi-play-fill"></i> <span data-i18n="heroBtnDemo">Play Demo</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="hero-img">
+                <img src="assets/Traveller1.svg" alt="Traveler" />
+            </div>
+        </section>
+
+        <div class="bottom-curve"></div>
+    </section>
+
+    <!-- Category Section -->
+    <section class="category container justify-content-center align-items-center text-center py-5">
+        <div class="mb-4">
+            <h6 class="text-uppercase text-muted fw-semibold" data-i18n="categorySubtitle">Category</h6>
+            <h2 class="fw-bold display-6" data-i18n="categoryTitle">We Offer Best Services</h2>
+        </div>
+
+        <div class="row justify-content-center g-4 mt-5">
+            <div class="col-10 col-sm-6 col-md-3">
+                <div class="category-card p-4 rounded-4 bg-white h-100">
+                    <img src="assets/category/Group 48.svg" width="60" alt="Weather" />
+                    <h5 class="fw-semibold" data-i18n="category1Title">Calculated Weather</h5>
+                    <p class="text-muted small mt-2" data-i18n="category1Desc">
+                        Built Wicket longer admire do barton vanity itself do in it.
+                    </p>
+                </div>
+            </div>
+            <div class="col-10 col-sm-6 col-md-3">
+                <div class="category-card p-4 rounded-4 bg-white h-100">
+                    <img src="assets/category/plane.svg" width="80" alt="Flights" />
+                    <h5 class="fw-semibold" data-i18n="category2Title">Best Flights</h5>
+                    <p class="text-muted small mt-2" data-i18n="category2Desc">
+                        Engrossed listening. Park gate sell they west hard for the.
+                    </p>
+                </div>
+            </div>
+            <div class="col-10 col-sm-6 col-md-3">
+                <div class="category-card p-4 rounded-4 bg-white h-100">
+                    <img src="assets/category/Group 50.svg" width="60" alt="Local Events" />
+                    <h5 class="fw-semibold" data-i18n="category3Title">Local Events</h5>
+                    <p class="text-muted small mt-2" data-i18n="category3Desc">
+                        Barton vanity itself do in it. Prefer to men engrossed listening.
+                    </p>
+                </div>
+            </div>
+            <div class="col-10 col-sm-6 col-md-3">
+                <div class="category-card p-4 rounded-4 bg-white h-100">
+                    <img src="assets/category/Group 49.svg" width="60" alt="Customization" />
+                    <h5 class="fw-semibold" data-i18n="category4Title">Customization</h5>
+                    <p class="text-muted small mt-2" data-i18n="category4Desc">
+                        We deliver outsourced aviation services for military customers.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dynamic Sections -->
+    <div id="destinations-container"></div>
+    <div id="booking-container"></div>
+    <div id="testimonials-container"></div>
+    <div id="airlines-container"></div>
+    <div id="subscribe-container"></div>
+    <div id="footer-container"></div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="js/loadPartials.js"></script>
+    <script src="js/header.js"></script>
+    <script src="js/i18n.js"></script>
+<script>
+    var swiper = new Swiper(".myTestimonials", {
+        direction: "vertical",
+        loop: true,
+        slidesPerView: 1,
+        spaceBetween: 30,
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+        navigation: {
+            nextEl: ".custom-next",
+            prevEl: ".custom-prev",
+        },
+    });
+</script>
+
+
+
+
 </body>
+
 </html>

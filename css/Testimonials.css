@@ -1,0 +1,92 @@
+
+                .testimonials h6 {
+                    margin-right: 5rem;
+                }
+        
+                .testimonials h2 {
+                    color: #14183e;
+                    font-family: 'Times New Roman', Times, serif;
+                    max-width: 400px;
+                    margin-left: 4rem;
+                }
+
+.swiper-pagination {
+    position: relative;
+    margin-top: 10px;
+    z-index: 10;
+}
+
+.swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+    background-color: #d9d9d9;
+    opacity: 1;
+    border-radius: 50%;
+    margin: 0 5px !important;
+    transition: all 0.3s ease;
+}
+
+.swiper-pagination-bullet-active {
+    background-color: gray;
+    transform: scale(1.2);
+}
+
+
+.myTestimonials {
+    overflow: visible !important;
+}
+
+
+.custom-prev,
+.custom-next {
+    position: absolute;
+    right: 10px;
+    width: 35px;
+    height: 35px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: gray;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    z-index: 20;
+}
+
+.custom-prev::after,
+.custom-next::after {
+    font-family: "bootstrap-icons";
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 1;
+}
+
+
+.custom-prev::after {
+    content: "\F235";
+   
+}
+
+
+.custom-next::after {
+    content: "\F229";
+   
+}
+
+.custom-prev {
+    top: 60%;
+}
+
+.custom-next {
+    bottom: 5%;
+}
+
+.custom-prev:hover,
+.custom-next:hover {
+    background-color:grey;
+    color: #fff;
+    transform: scale(1.1);
+}
