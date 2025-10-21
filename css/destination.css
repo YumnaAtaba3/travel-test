@@ -1,0 +1,97 @@
+
+
+.selling {
+    transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+
+.selling-subtitle {
+    color: var(--secondary-text);
+    letter-spacing: 2px;
+    transition: color 0.4s ease;
+}
+
+
+.selling h2 {
+    color: var(--text-color);
+    transition: color 0.4s ease;
+}
+
+
+.destination-card {
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.4s ease, color 0.4s ease;
+    position: relative;
+}
+
+.destination-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.1);
+}
+
+
+.destination-card img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    display: block;
+}
+
+
+.destination-info {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(6px);
+    color: #000;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+
+.destination-title {
+    color: var(--text-color);
+    transition: color 0.4s ease;
+}
+
+.destination-price {
+    color: var(--accent-color);
+}
+
+.destination-details {
+    color: var(--secondary-text);
+    transition: color 0.4s ease;
+}
+
+
+[data-theme="dark"] .destination-card {
+    background-color: #1e1e1e;
+    color: #f5f5f5;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+[data-theme="dark"] .destination-info {
+    background: rgba(20, 20, 20, 0.9);
+    color: #f5f5f5;
+}
+
+[data-theme="dark"] .destination-title {
+    color: #ffffff;
+}
+
+[data-theme="dark"] .destination-details {
+    color: #b0b0b0;
+}
+
+[data-theme="dark"] .destination-price {
+    color: var(--accent-color);
+}
+
+
+@media (max-width: 768px) {
+    .destination-card img {
+        height: 250px;
+    }
+}

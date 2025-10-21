@@ -5,7 +5,7 @@
                 <img src="assets/header/Logo.svg" alt="Jadoo logo" />
             </a>
 
-            <!-- Nav (desktop) -->
+            <!-- nav -->
             <ul class="nav d-none d-md-flex align-items-center gap-5">
                 <li class="nav-item"><a class="nav-link" href="#" data-i18n="destinations">Destinations</a></li>
                 <li class="nav-item"><a class="nav-link" href="#" data-i18n="hotels">Hotels</a></li>
@@ -13,18 +13,21 @@
                 <li class="nav-item"><a class="nav-link" href="#" data-i18n="bookings">Bookings</a></li>
             </ul>
 
-            <!-- Right actions -->
-            <div class="d-flex align-items-center gap-5">
+            <div class="d-flex align-items-center gap-3 gap-md-4">
                 <a class="nav-link d-none d-md-block" href="#" data-i18n="login">Login</a>
                 <button class="btn btn-signup" data-i18n="signup">Sign up</button>
 
-                <!-- Language dropdown -->
-                <div class="dropdown ms-2 d-none d-md-block">
-                    <button id="langToggle" class="btn btn-sm btn-light d-none d-md-block"
-                        data-i18n="language">EN</button>
+                <!-- Language -->
+                <div class="Language d-none d-md-block">
+                    <button id="langToggle" class="btn btn-sm btn-light" data-i18n="language">EN</button>
                 </div>
 
-                <!-- Mobile menu button -->
+                <!-- Theme Toggle -->
+            <button id="themeToggle" class="btn btn-theme">
+                <i id="themeIcon" class="bi bi-moon-fill"></i>
+            </button>
+
+                <!-- Mobile Menu -->
                 <button class="btn d-md-none btn-light" type="button" data-bs-toggle="offcanvas"
                     data-bs-target="#mobileMenu" aria-controls="mobileMenu">
                     ☰
@@ -50,5 +53,6 @@
         <hr>
         <a class="d-block py-2" href="#" data-i18n="login">Login</a>
         <a class="d-block py-2" href="#" data-i18n="signup">Sign up</a>
+        <button id="langToggle" class="btn btn-sm btn-light" data-i18n="language">EN</button>
     </div>
 </div>

@@ -1,74 +1,186 @@
-        /* General Styles */
-        .category h6,
-        .selling h6 {
-            color: #5e6282;
-            letter-spacing: 2px;
-        }
 
-        .category h2,
-        .selling h2 {
-            color: #14183e;
-            font-family: 'Times New Roman', Times, serif;
-        }
+       :root {
+           --bg-color: #ffffff;
+           --text-color: #14183E;
+           --card-bg: #ffffff;
+           --accent-color: #F1A501;
+           --secondary-text: #5e6282;
+       }
 
-        .category-card {
-            transition: all 0.3s ease;
-            position: relative;
-            max-width: 220px;
-        }
+       [data-theme="dark"] {
+           --bg-color: #121212;
+           --text-color: #f5f5f5;
+           --card-bg: #1e1e1e;
+           --accent-color: #ffb703;
+           --secondary-text: #b0b0b0;
+       }
 
-        .category-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
-        }
 
-        .category-card img {
-            transition: transform 0.3s ease;
-        }
+       body {
+           background-color: var(--bg-color);
+           color: var(--text-color);
+           transition: background-color 0.4s ease, color 0.4s ease;
+       }
 
-        .category-card:hover img {
-            transform: scale(1.1);
-        }
+       header,
+       .category-card,
+       .destination-card,
+       .offcanvas,
+       footer {
+           background-color: var(--card-bg);
+           color: var(--text-color);
+           transition: background-color 0.4s ease, color 0.4s ease;
+       }
 
-        .fw-semibold {
-            margin: 5px;
-            font-size: 16px;
-        }
+  
+       .category h6,
+       .selling h6 {
+           color: var(--secondary-text);
+           letter-spacing: 2px;
+       }
 
-        /* Top Destinations */
-        .destination-card {
-            width: 300px;
-            border-radius: 20px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            cursor: pointer;
-            margin: 0 auto;
-            background-color: #fff;
-            position: relative;
-        }
+       .category h2,
+       .selling h2 {
+           color: var(--text-color);
+           font-family: 'Times New Roman', Times, serif;
+       }
 
-        .destination-card img {
-            width: 100%;
-            height: 320px;
-            object-fit: cover;
-            display: block;
-        }
+       .nav-link {
+           color: var(--text-color) !important;
+       }
 
-        .destination-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
-        }
+       .nav-link:hover {
+           color: var(--accent-color) !important;
+       }
 
-        .destination-info {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            padding: 15px;
-            background-color: #fff;
-            border-top-left-radius: 20px;
-            border-top-right-radius: 20px;
-        }
+     
+       .category-card {
+           transition: all 0.3s ease;
+           position: relative;
+           max-width: 220px;
+       }
 
+       .category-card:hover {
+           transform: translateY(-10px);
+           box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+       }
+
+       
+       .destination-card {
+           width: 300px;
+           border-radius: 20px;
+           background-color: var(--card-bg);
+           position: relative;
+           transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.4s ease, color 0.4s ease;
+       }
+
+       .destination-card:hover {
+           transform: translateY(-10px);
+           box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+       }
+
+       
+       .subscribe-bg {
+           background-image: url('../assets/email/Rectangle 164.svg');
+           background-repeat: no-repeat;
+           min-height: 250px;
+           color: var(--secondary-text);
+           position: relative;
+           padding: 2rem;
+           border: none;
+           outline: none;
+           box-shadow: none;
+       }
+
+       .subscribe-bg * {
+           position: relative;
+           z-index: 1;
+           color: var(--secondary-text);
+       }
+
+      
+       .social-icon {
+           width: 30px;
+           height: 30px;
+           border-radius: 50%;
+           background: #fff;
+           box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+           display: flex;
+           justify-content: center;
+           align-items: center;
+           transition: transform 0.3s ease;
+       }
+
+       .social-icon:hover {
+           transform: scale(1.1);
+       }
+
+       .instagram-bg {
+           background: conic-gradient(from 180deg at 50% 50%,
+                   #B8D2F1 0deg,
+                   #F289AA 60deg,
+                   #C68BF0 106.09deg,
+                   #D164DA 153.75deg,
+                   #C963E8 221.25deg,
+                   #BFC2E8 258.75deg,
+                   #FFC999 288.75deg,
+                   #D0D8C9 315deg,
+                   #BAD0F1 334.13deg,
+                   #CED8CB 358.97deg,
+                   rgba(255, 255, 255, 0) 360deg);
+       }
+
+      
+       [dir="rtl"] .booking-step {
+           flex-direction: row;
+           text-align: right;
+           justify-content: flex-start;
+       }
+
+       [dir="rtl"] .booking-step .me-3 {
+           margin-right: 0 !important;
+           margin-left: 1rem !important;
+       }
+
+       [dir="rtl"] .booking h2,
+       [dir="rtl"] .booking h6,
+       [dir="rtl"] .booking p {
+           text-align: right;
+       }
+
+       [dir="rtl"] .booking .card {
+           text-align: right;
+       }
+
+       [dir="rtl"] .booking .ms-auto {
+           margin-left: 0 !important;
+           margin-right: auto !important;
+       }
+
+       [dir="ltr"] .booking-step {
+           flex-direction: row;
+           text-align: left;
+       }
+
+       
+       @media (max-width: 768px) {
+           .destination-card {
+               width: 100%;
+               max-width: 270px;
+           }
+
+           .destination-card img {
+               height: 250px;
+           }
+       }
+       
+       .subscribe button {
+            background-color: #FF7D68;
+            border: none;
+            color: #fff;
+            font-size: 14px;
+        }
+   
         .custom-badge {
             width: 40px;
             height: 40px;
@@ -92,7 +204,7 @@
             color: #dc3545;
         }
 
-        /* Booking Section RTL/LTR Fixes */
+     
         [dir="rtl"] .booking-step {
             flex-direction: row;
             text-align: right;
@@ -124,26 +236,28 @@
             text-align: left;
         }
 
-        /* Responsive */
-        @media (max-width: 768px) {
-            .destination-card {
-                width: 100%;
-                max-width: 270px;
-            }
+           .airline-img {
+               filter: grayscale(50%) brightness(0);
+               transition: all 0.4s ease;
+               opacity: 0.9;
+               transform: scale(1);
+           }
+    
+         
+           .airline-img:hover {
+               filter: none;
+               opacity: 1;
+               transform: scale(1.05);
+               box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+           }
+[data-theme="dark"] .airline-img {
+    filter: none;
+    
+    opacity: 1;
+   
+    transform: scale(1);
 
-            .destination-card img {
-                height: 250px;
-            }
-        }
-
-
-
-
-        .airline-img:not(.expedia) {
-            filter: grayscale(100%) brightness(0);
-        }
-
-
+}
         .subscribe-bg {
             background-image: url('../assets/email/Rectangle 164.svg');
             background-repeat: no-repeat;
@@ -172,14 +286,91 @@
             color: #fff;
             font-size: 14px;
         }
+              
+        [dir="rtl"] .subscribe form {
+           flex-direction: row-reverse;
+                   
+                }
+        
+                [dir="rtl"] .subscribe .input-group {
+                    direction: rtl;
+                    text-align: right;
+                }
+        
+                [dir="rtl"] .subscribe .input-group-text {
+                    border-radius: 0 0.375rem 0.375rem 0;
+                   
+                    border-left: none;
+                    border-right: 1px solid #ced4da;
+                }
+        
+                [dir="rtl"] .subscribe .form-control {
+                    border-radius: 0.375rem 0 0 0.375rem;
+                   
+                }
+        
+                [dir="rtl"] .subscribe button {
+                    margin-left: 1 !important;
+                    margin-right: 1rem !important;
+                }
+        
+                [dir="ltr"] .subscribe form {
+                    flex-direction: row;
+                }
+        
+                [dir="ltr"] .subscribe .input-group {
+                    direction: ltr;
+                    text-align: left;
+                }
+ 
+  .subscribe form {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 0.5rem;
 
-                 /* Common style for social icons */
+  }
+
+
+
+
+  [dir="ltr"] .subscribe .input-group {
+      order: 0;
+
+  }
+
+  [dir="ltr"] .subscribe button {
+      order: 1;
+      margin-left: 0.5rem;
+      margin-right: 0;
+  }
+
+
+  [dir="rtl"] .subscribe form {
+      flex-direction: row-reverse;
+  }
+
+  [dir="rtl"] .subscribe .input-group {
+      order: 1;
+
+  }
+
+  [dir="rtl"] .subscribe button {
+      order: 0;
+      margin-right: 0.5rem;
+      margin-left: 0;
+  }.subscribe button:hover {
+    background-color: #FF946D;
+    color: #fff;
+}
+               
                  .social-icon {
                      width: 30px;
                      height: 30px;
                      border-radius: 50%;
                      background: #fff;
-                     /* white background for Facebook and Twitter */
+                     
                      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
                      display: flex;
                      justify-content: center;
@@ -191,7 +382,7 @@
                      transform: scale(1.1);
                  }
         
-                 /* Instagram gradient */
+              
                  .instagram-bg {
                      background: conic-gradient(from 180deg at 50% 50%,
                              #B8D2F1 0deg,
@@ -205,5 +396,68 @@
                              #BAD0F1 334.13deg,
                              #CED8CB 358.97deg,
                              rgba(255, 255, 255, 0) 360deg);
-                 }
+                 } 
 
+
+.category-card {
+    position: relative;
+    border-radius: 1rem;
+    overflow: visible;
+    height: 100%;
+    max-width: 220px;
+    margin: 0 auto;
+}
+
+.category-shape {
+    position: absolute;
+    left: -22px;
+    bottom: -22px;
+    width: 84px;
+    height: 84px;
+    background: #FF7D68;
+    border-radius: 20px 20px 8px 20px;
+    z-index: 1;
+    transform: translateY(10px);
+    opacity: 0;
+    transition: opacity 0.28s ease, transform 0.28s ease;
+    box-shadow: 0 8px 18px rgba(34, 34, 34, 0.06);
+}
+
+.category-card-body {
+    position: relative;
+    z-index: 2;
+    background: var(--card-bg);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    transition: transform 0.28s ease, box-shadow 0.28s ease, background-color 0.4s ease;
+    box-shadow: 0 6px 22px rgba(2, 6, 23, 0.04);
+}
+
+.category-card:hover .category-shape {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.category-card:hover .category-card-body {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(2, 6, 23, 0.08);
+}
+
+@media (max-width: 576px) {
+    .category-shape {
+        width: 64px;
+        height: 64px;
+        left: -18px;
+        bottom: -18px;
+    }
+
+    .category-card-body {
+        padding: 1rem;
+    }
+}

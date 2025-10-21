@@ -1,42 +1,98 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const partials = [
-    { id: "header-container", file: "header.html" },
-    { id: "destinations-container", file: "destinations.html" },
-    { id: "booking-container", file: "booking.html" },
-    { id: "testimonials-container", file: "testimonials.html" },
-    { id: "airlines-container", file: "airlines.html" },
-    { id: "subscribe-container", file: "subscribe.html" },
-    { id: "footer-container", file: "footer.html" },
-  ];
+let translations = {}; 
 
-  // Load all partials asynchronously
-  const loadPromises = partials.map((partial) => {
-    const el = document.getElementById(partial.id);
-    if (!el) return Promise.resolve();
+async function loadTranslations() {
+  try {
+    const res = await fetch("js/translations.json"); 
+    translations = await res.json();
+  } catch (err) {
+    console.error("Failed to load translations:", err);
+  }
+}
 
-    return fetch(`partials/${partial.file}`)
-      .then((res) => {
-        if (!res.ok) throw new Error(`Failed to load ${partial.file}`);
-        return res.text();
-      })
-      .then((html) => (el.innerHTML = html));
+function translatePage(lang) {
+  if (!translations[lang]) return;
+
+  document.querySelectorAll("[data-i18n]").forEach((el) => {
+    const key = el.getAttribute("data-i18n");
+    if (translations[lang][key]) el.textContent = translations[lang][key];
   });
 
-  // After all partials are loaded
-  Promise.all(loadPromises)
-    .then(() => {
-      let currentLang = "en";
-      translatePage(currentLang);
+  document.querySelectorAll("[data-i18n-placeholder]").forEach((el) => {
+    const key = el.getAttribute("data-i18n-placeholder");
+    if (translations[lang][key]) el.placeholder = translations[lang][key];
+  });
 
-      // Add toggle listener **after header is loaded**
-      const langBtn = document.getElementById("langToggle");
-      if (langBtn) {
-        langBtn.addEventListener("click", () => {
-          currentLang = currentLang === "en" ? "ar" : "en";
-          translatePage(currentLang);
-          langBtn.textContent = translations[currentLang].language;
-        });
-      }
-    })
-    .catch((err) => console.error(err));
+  if (lang === "ar") {
+    document.documentElement.setAttribute("dir", "rtl");
+    document.documentElement.setAttribute("lang", "ar");
+  } else {
+    document.documentElement.setAttribute("dir", "ltr");
+    document.documentElement.setAttribute("lang", "en");
+  }
+
+  localStorage.setItem("lang", lang);
+}
+
+function applyTheme(theme) {
+  document.documentElement.setAttribute("data-theme", theme);
+  localStorage.setItem("theme", theme);
+}
+
+document.addEventListener("DOMContentLoaded", async function () {
+  // Load translations first
+  await loadTranslations();
+
+  let currentLang = localStorage.getItem("lang") || "en";
+  let currentTheme = localStorage.getItem("theme") || "light";
+
+  const partials = [
+    { id: "header-container", file: "partials/header.html" },
+    { id: "destinations-container", file: "partials/destinations.html" },
+    { id: "booking-container", file: "partials/booking.html" },
+    { id: "testimonials-container", file: "partials/testimonials.html" },
+    { id: "airlines-container", file: "partials/airlines.html" },
+    { id: "subscribe-container", file: "partials/subscribe.html" },
+    { id: "footer-container", file: "partials/footer.html" },
+  ];
+
+  for (const { id, file } of partials) {
+    try {
+      const res = await fetch(file);
+      const html = await res.text();
+      document.getElementById(id).innerHTML = html;
+    } catch (err) {
+      console.error(`Failed to load ${file}:`, err);
+    }
+  }
+
+  translatePage(currentLang);
+  applyTheme(currentTheme);
+
+  
+  new Swiper(".myTestimonials", {
+    direction: "vertical",
+    loop: true,
+    slidesPerView: 1,
+    autoplay: { delay: 3000, disableOnInteraction: false },
+    navigation: { nextEl: ".custom-next", prevEl: ".custom-prev" },
+  });
+
+  const langBtn = document.getElementById("langToggle");
+  const themeBtn = document.getElementById("themeToggle");
+
+  if (langBtn) {
+    langBtn.textContent = translations[currentLang]?.language || "EN";
+    langBtn.addEventListener("click", () => {
+      currentLang = currentLang === "en" ? "ar" : "en";
+      translatePage(currentLang);
+      langBtn.textContent = translations[currentLang].language;
+    });
+  }
+
+  if (themeBtn) {
+    themeBtn.addEventListener("click", () => {
+      currentTheme = currentTheme === "light" ? "dark" : "light";
+      applyTheme(currentTheme);
+    });
+  }
 });
