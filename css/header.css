@@ -112,26 +112,6 @@ html[dir="rtl"] .nav li:first-child {
 }
 
 
-#langToggle {
-    border: none;
-    font-weight: 500;
-    transition: all 0.3s ease;
-    padding: 4px 10px;
-    border-radius: 5px;
-}
-
-
-[data-theme="light"] #langToggle {
-    background-color:var(--card-bg);
-    color: var(--text-color);
-}
-
-
-[data-theme="dark"] #langToggle {
-    background-color:var(--card-bg);
-    color: var(--text-color);
-}
-
 
 .offcanvas {
     background-color: var(--card-bg);
@@ -193,8 +173,9 @@ html[dir="rtl"] .nav li:first-child {
 
 [dir="rtl"] .offcanvas-header .btn-close {
     margin-left: 0;
+
     margin-right: 0;
-   
+ 
 }
 html[dir="rtl"] header::before {
     left: auto;
