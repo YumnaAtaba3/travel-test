@@ -104,22 +104,38 @@ html[dir="rtl"] .custom-next i {
     transform: rotate(180deg);
 }
 
-/* Pagination dots */
-.testimonials .swiper-pagination {
-    justify-content: flex-start;
-    margin-top: 1rem;
+
+.swiper-pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.5rem;
+    gap: 10px;
+
 }
 
-.swiper-pagination-bullet {
-    width: 10px;
-    height: 10px;
+
+
+.swiper-pagination-bullet-active {
+    background-color: #14183e;
+    transform: scale(1.4);
+
+}
+
+.testimonials .swiper-pagination {
+    position: relative;
+
+    bottom: 0;
+    left: 0;
+}
+
+
+
+
+/* .swiper-pagination-bullet {
+    width: 18px;
+    height: 18px;
     background-color: #ccc;
     opacity: 1;
     border-radius: 50%;
     transition: all 0.3s ease;
-}
-
-.swiper-pagination-bullet-active {
-    background-color: #14183e;
-    transform: scale(1.2);
-}
+} */

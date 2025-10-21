@@ -109,11 +109,11 @@ html[dir="rtl"] .nav li:first-child {
     transition: color 0.3s ease;
 }
 
-.Language .btn-light:hover,
+/* .Language .btn-light:hover,
 .btn.btn-light[data-bs-toggle="offcanvas"]:hover {
     color: var(--accent-color) !important;
     
-}
+} */
 
 
 .offcanvas {

@@ -163,17 +163,7 @@
        }
 
        
-       @media (max-width: 768px) {
-           .destination-card {
-               width: 100%;
-               max-width: 270px;
-           }
 
-           .destination-card img {
-               height: 250px;
-           }
-       }
-       
        .subscribe button {
             background-color: #FF7D68;
             border: none;
@@ -452,6 +442,17 @@
     box-shadow: 0 15px 40px rgba(2, 6, 23, 0.08);
 }
 
+
+@media (max-width: 768px) {
+    .destination-card {
+   width: 100%;
+   max-width: 270px;
+     }
+        
+ .destination-card img {
+      height: 250px;
+  }
+ }
 @media (max-width: 576px) {
     .category-shape {
         width: 64px;
@@ -464,3 +465,4 @@
         padding: 1rem;
     }
 }
+

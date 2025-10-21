@@ -30,6 +30,17 @@ function translatePage(lang) {
 function applyTheme(theme) {
   document.documentElement.setAttribute("data-theme", theme);
   localStorage.setItem("theme", theme);
+
+  const themeIcon = document.getElementById("themeIcon");
+  if (!themeIcon) return;
+
+  if (theme === "dark") {
+    themeIcon.classList.remove("bi-moon-fill");
+    themeIcon.classList.add("bi-sun-fill"); // show sun in dark mode
+  } else {
+    themeIcon.classList.remove("bi-sun-fill");
+    themeIcon.classList.add("bi-moon-fill"); // show moon in light mode
+  }
 }
 
 document.addEventListener("DOMContentLoaded", async () => {
@@ -41,6 +52,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   translatePage(currentLang);
   applyTheme(currentTheme);
 
+  // Initialize Swiper
   new Swiper(".myTestimonials", {
     direction: "vertical",
     loop: true,
