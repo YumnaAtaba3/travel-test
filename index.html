@@ -25,8 +25,65 @@
 </head>
 
 <body>
+
+    <!-- header -->
+    <header class="py-4">
+        <div class="container">
+            <nav class="d-flex align-items-center justify-content-between">
+                <a class="site-logo d-flex align-items-center text-decoration-none" href="#">
+                    <img src="assets/header/Logo.svg" alt="Jadoo logo" />
+                </a>
+
+                <ul class="nav d-none d-md-flex align-items-center gap-5">
+                    <li class="nav-item"><a class="nav-link" href="#" data-i18n="destinations">Destinations</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" data-i18n="hotels">Hotels</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" data-i18n="flights">Flights</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" data-i18n="bookings">Bookings</a></li>
+                </ul>
+
+                <div class="d-flex align-items-center gap-3 gap-md-4">
+                    <a class="nav-link d-none d-md-block" href="#" data-i18n="login">Login</a>
+                    <button class="btn btn-signup" data-i18n="signup">Sign up</button>
+
+                    <button id="langToggle" class="btn btn-sm btn-light" data-i18n="language">EN</button>
+
+                    <button id="themeToggle" class="btn btn-theme">
+                        <i id="themeIcon" class="bi bi-moon-fill"></i>
+                    </button>
+
+                    <button class="btn d-md-none btn-light" type="button" data-bs-toggle="offcanvas"
+                        data-bs-target="#mobileMenu" aria-controls="mobileMenu">
+                        ☰
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- mobile menu -->
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="mobileMenu" aria-labelledby="mobileMenuLabel">
+        <div class="offcanvas-header">
+            <a class="site-logo d-flex align-items-center text-decoration-none" href="#">
+                <img src="assets/header/Logo.svg" alt="Jadoo logo" />
+            </a>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="list-unstyled">
+                <li><a class="d-block py-2" href="#" data-i18n="destinations">Destinations</a></li>
+                <li><a class="d-block py-2" href="#" data-i18n="hotels">Hotels</a></li>
+                <li><a class="d-block py-2" href="#" data-i18n="flights">Flights</a></li>
+                <li><a class="d-block py-2" href="#" data-i18n="bookings">Bookings</a></li>
+            </ul>
+            <hr>
+            <a class="d-block py-2" href="#" data-i18n="login">Login</a>
+            <a class="d-block py-2" href="#" data-i18n="signup">Sign up</a>
+            <button id="langToggleMobile" class="btn btn-sm btn-light" data-i18n="language">EN</button>
+        </div>
+    </div>
+
+    <!-- hero -->
     <section class="hero-wrapper">
-        <div id="header-container"></div>
         <img src="assets/plane.svg" alt="Plane" class="plane" />
         <img src="assets/plane.svg" alt="Plane" class="plane plane2" />
 
@@ -40,7 +97,8 @@
                 </h1>
                 <p data-i18n="heroDescription">
                     Built Wicket longer admire do barton vanity itself do in it. Preferred to sportsmen it engrossed
-                    listening. Park gate sell they west hard for the.
+                    listening.
+                    Park gate sell they west hard for the.
                 </p>
                 <div class="d-flex align-items-center gap-4">
                     <button class="btn-primary-custom" data-i18n="heroBtnMore">Find out more</button>
@@ -54,24 +112,511 @@
                 <img src="assets/Traveller1.svg" alt="Traveler" />
             </div>
         </section>
-
         <div class="bottom-curve"></div>
     </section>
 
+<!-- Category Section -->
+<section class="category container justify-content-center align-items-center text-center py-5">
+    <div class="mb-4">
+        <h6 class="text-uppercase fw-semibold category-subtitle" data-i18n="categorySubtitle">
+            Category
+        </h6>
+        <h2 class="fw-bold display-6" data-i18n="categoryTitle">
+            We Offer Best Services
+        </h2>
+    </div>
+
+    <div class="row justify-content-center g-4 mt-5">
+        <div class="col-10 col-sm-6 col-md-3">
+            <div class="category-card">
+                <div class="category-shape" aria-hidden="true"></div>
+                <div class="category-card-body">
+                    <img src="assets/category/Group 48.svg" width="60" alt="Weather" />
+                    <h5 class="fw-semibold mt-3" data-i18n="category1Title">Calculated Weather</h5>
+                    <p class="small mt-2" data-i18n="category1Desc">
+                        Built Wicket longer admire do barton vanity itself do in it.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-10 col-sm-6 col-md-3">
+            <div class="category-card">
+                <div class="category-shape" aria-hidden="true"></div>
+                <div class="category-card-body">
+                    <img src="assets/category/plane.svg" width="80" alt="Flights" />
+                    <h5 class="fw-semibold mt-3" data-i18n="category2Title">Best Flights</h5>
+                    <p class="small mt-2" data-i18n="category2Desc">
+                        Engrossed listening. Park gate sell they west hard for the.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-10 col-sm-6 col-md-3">
+            <div class="category-card">
+                <div class="category-shape" aria-hidden="true"></div>
+                <div class="category-card-body">
+                    <img src="assets/category/Group 50.svg" width="60" alt="Local Events" />
+                    <h5 class="fw-semibold mt-3" data-i18n="category3Title">Local Events</h5>
+                    <p class="small mt-2" data-i18n="category3Desc">
+                        Barton vanity itself do in it. Prefer to men engrossed listening.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-10 col-sm-6 col-md-3">
+            <div class="category-card">
+                <div class="category-shape" aria-hidden="true"></div>
+                <div class="category-card-body">
+                    <img src="assets/category/Group 49.svg" width="60" alt="Customization" />
+                    <h5 class="fw-semibold mt-3" data-i18n="category4Title">Customization</h5>
+                    <p class="small mt-2" data-i18n="category4Desc">
+                        We deliver outsourced aviation services for military customers.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- selling -->
+<section class="selling container text-center py-5">
+    <div class="mb-4">
+        <h6 class="text-uppercase fw-semibold selling-subtitle" data-i18n="topSellingSubtitle">
+            Top Selling
+        </h6>
+        <h2 class="fw-bold display-6" data-i18n="topSellingTitle">
+            Top Destinations
+        </h2>
+    </div>
+
+    <div class="row justify-content-center g-4 mt-4">
+        <!-- Rome Card -->
+        <div class="col-8 col-sm-6 col-md-4">
+            <div class="destination-card position-relative rounded-4 overflow-hidden">
+                <img src="assets/top-selling/roma.svg" alt="Rome, Italy" class="img-fluid w-100" />
+                <div class="destination-info position-absolute bottom-0 w-100 p-3">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h5 class="fw-bold mb-0 destination-title" data-i18n="destination1Name">Rome, Italy</h5>
+                        <span class="fw-bold destination-price" data-i18n="destination1Price">$5.42k</span>
+                    </div>
+                    <div class="d-flex align-items-center mt-2 destination-details small">
+                        <i class="bi bi-send-fill me-2"></i>
+                        <span data-i18n="destination1Duration">10 Days Trip</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- London Card -->
+        <div class="col-10 col-sm-6 col-md-4">
+            <div class="destination-card position-relative rounded-4 overflow-hidden">
+                <img src="assets/top-selling/london.svg" alt="London, UK" class="img-fluid w-100" />
+                <div class="destination-info position-absolute bottom-0 w-100 p-3">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h5 class="fw-bold mb-0 destination-title" data-i18n="destination2Name">London, UK</h5>
+                        <span class="fw-bold destination-price" data-i18n="destination2Price">$4.2k</span>
+                    </div>
+                    <div class="d-flex align-items-center mt-2 destination-details small">
+                        <i class="bi bi-send-fill me-2"></i>
+                        <span data-i18n="destination2Duration">12 Days Trip</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Europe Card -->
+        <div class="col-10 col-sm-6 col-md-4">
+            <div class="destination-card position-relative rounded-4 overflow-hidden">
+                <img src="assets/top-selling/Europe.svg" alt="Full Europe" class="img-fluid w-100" />
+                <div class="destination-info position-absolute bottom-0  w-100 p-3">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h5 class="fw-bold mb-0 destination-title" data-i18n="destination3Name">Full Europe</h5>
+                        <span class="fw-bold destination-price" data-i18n="destination3Price">$15k</span>
+                    </div>
+                    <div class="d-flex align-items-center mt-2 destination-details small">
+                        <i class="bi bi-send-fill me-2"></i>
+                        <span data-i18n="destination3Duration">28 Days Trip</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- booking -->
+<section class="booking container py-5" id="bookingSection">
+    <div class="row align-items-start justify-content-between">
+        <div class="col-md-8">
+            <h6 class="booking-subtitle" data-i18n="bookingSubtitle">Easy and Fast</h6>
+            <h2 class="fw-bold display-6 mb-4 booking-title" data-i18n="bookingTitle">
+                Book Your Next Trip In 3 Easy Steps
+            </h2>
+
+            <!-- Step 1 -->
+            <div class="mb-4 d-flex booking-step w-100">
+                <div class="me-3">
+                    <span class="badge bg-warning text-dark rounded-4 p-3">
+                        <img src="assets/booking/selection 1.svg" alt="Map Icon" class="img-fluid" />
+                    </span>
+                </div>
+                <div>
+                    <h6 class="fw-bold step-title" data-i18n="step1Title">Choose Destination</h6>
+                    <p class="step-desc" data-i18n="step1Desc">Find your dream destination easily with our smart search.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="mb-4 d-flex booking-step w-100">
+                <div class="me-3">
+                    <span class="badge bg-danger rounded-4 border border-3 p-3">
+                        <img src="assets/booking/water-sport 1.svg" alt="Water Sport Icon" class="img-fluid" />
+                    </span>
+                </div>
+                <div>
+                    <h6 class="fw-bold step-title" data-i18n="step2Title">Make Payment</h6>
+                    <p class="step-desc" data-i18n="step2Desc">Pay securely with multiple options and instant
+                        confirmation.</p>
+                </div>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="d-flex booking-step w-100">
+                <div class="me-3">
+                    <span class="badge rounded-4 p-3 step3-badge" style="background-color: #006380;">
+                        <img src="assets/booking/Taxi Car Cab Vehicle Transport.svg" alt="Taxi Icon"
+                            class="img-fluid" />
+                    </span>
+                </div>
+                <div>
+                    <h6 class="fw-bold step-title" data-i18n="step3Title">Reach Airport on Selected Date</h6>
+                    <p class="step-desc" data-i18n="step3Desc">Enjoy a smooth experience and timely transfers.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Trip Card -->
+        <div class="booking-card card rounded-4 mt-5 mt-md-0" style="width: 20rem;">
+            <img src="assets/booking/trip-girl.jpg" class="img-fluid rounded-4 p-3" alt="Trip Card" />
+            <div class="card-body">
+                <h5 class="card-title" data-i18n="tripCardTitle">Trip To Greece</h5>
+                <p class="card-text text-sm" data-i18n="tripCardDate">14–29 June | by Robbin Joseph</p>
+
+                <div class="d-flex justify-content-start align-items-center gap-3">
+                    <span class="badge rounded-circle p-2 custom-badge">
+                        <img src="assets/booking/leaf 1.svg" alt="Leaf Icon" />
+                    </span>
+                    <span class="badge rounded-circle p-2 custom-badge">
+                        <img src="assets/booking/map.svg" alt="Map Icon" />
+                    </span>
+                    <span class="badge rounded-circle p-2 custom-badge">
+                        <img src="assets/booking/send 2.svg" alt="Send Icon" />
+                    </span>
+                </div>
+
+                <div class="d-flex align-items-center py-4">
+                    <div class="d-flex align-items-center gap-2">
+                        <img src="assets/booking/building 1.svg" alt="Building Icon" />
+                        <p class="card-text text-sm mb-0" data-i18n="tripCardPeople">24 people going</p>
+                    </div>
+                    <i class="bi bi-heart ms-auto"></i>
+                </div>
+
+                <!-- Floating card -->
+                <div class="floating-card position-absolute shadow-sm rounded-4 p-3 d-flex align-items-center">
+                    <div class="me-3 flex-shrink-0">
+                        <img src="assets/booking/roma-card.svg" alt="Rome Icon" width="55" class="rounded-4" />
+                    </div>
+
+                    <div class="flex-grow-1">
+                        <div class="d-flex align-items-center justify-content-between mb-1">
+                            <span class="text-muted small" data-i18n="tripRomeStatus">Ongoing</span>
+                        </div>
+                        <h6 class="fw-semibold mb-1" data-i18n="tripRomeTitle">Trip to Rome</h6>
+
+                        <div class="progress" style="height: 5px; border-radius: 4px;">
+                            <div class="progress-bar" role="progressbar" style="width: 40%;" aria-valuenow="40"
+                                aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                        <small class="text-muted d-block mt-1" data-i18n="tripRomeProgress">40% completed</small>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- testimonials  -->
+<section class="testimonials container py-5">
+    <div class="row align-items-center">
+        <!-- left side -->
+        <div class="col-12 col-lg-5 text-lg-start text-center mb-4 mb-lg-0">
+            <h6 class="text-uppercase fw-semibold mb-2" data-i18n="testimonialsSubtitle">
+                Testimonials
+            </h6>
+            <h2 class="fw-bold display-6" data-i18n="testimonialsTitle">
+                What People Say About Us.
+            </h2>
+
+            <!-- Pagination dots -->
+            <div class="swiper-pagination mt-3"></div>
+        </div>
+
+        <!-- right side -->
+        <div class="col-12 col-lg-7 position-relative">
+            <div class="swiper myTestimonials">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide d-flex justify-content-center align-items-center">
+                        <div class="card testimonial-card p-4 border-0 shadow-sm rounded-4 text-start">
+                            <img src="assets/testimonials/Image.png" class="rounded-circle testimonial-img"
+                                alt="User" />
+                            <div class="mt-4 pt-2">
+                                <p class="mb-3" data-i18n="testimonialText">
+                                    “On the Windows talking pointed pasture yet its express parties use. Sure last upon
+                                    same as knew next.”
+                                </p>
+                                <h6 class="fw-bold mb-0" data-i18n="testimonialName">Mike Taylor</h6>
+                                <small data-i18n="testimonialLocation">Lahore, Pakistan</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide d-flex justify-content-center align-items-center">
+                        <div class="card testimonial-card p-4 border-0 shadow-sm rounded-4 text-start">
+                            <img src="assets/testimonials/Image.png" class="rounded-circle testimonial-img"
+                                alt="User" />
+                            <div class="mt-4 pt-2">
+                                <p class="mb-3" data-i18n="testimonialText2">
+                                    “Loved the experience! Everything was seamless and enjoyable.”
+                                </p>
+                                <h6 class="fw-bold mb-0" data-i18n="testimonialName2">Sarah Khan</h6>
+                                <small data-i18n="testimonialLocation2">Karachi, Pakistan</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="custom-prev"><i class="bi bi-chevron-up"></i></div>
+            <div class="custom-next"><i class="bi bi-chevron-down"></i></div>
+        </div>
+    </div>
+</section>
+    <!-- airlines -->
+<section class="airlines container py-5">
+    <div class="row justify-content-center align-items-center g-3 g-md-4 mt-4">
+        <div class="col-4 col-sm-2">
+            <img src="assets/airlineComp/axon.svg" alt="Axon" class="airline-img axon img-fluid" />
+        </div>
+        <div class="col-4 col-sm-2">
+            <img src="assets/airlineComp/jetStar.svg" alt="JetStar" class="airline-img jetstar img-fluid" />
+        </div>
+        <div class="col-4 col-sm-2">
+            <img src="assets/airlineComp/expedia.svg" alt="Expedia" class="airline-img expedia img-fluid" />
+        </div>
+        <div class="col-4 col-sm-2">
+            <img src="assets/airlineComp/Qantas.svg" alt="Qantas" class="airline-img qantas img-fluid" />
+        </div>
+        <div class="col-4 col-sm-2">
+            <img src="assets/airlineComp/Alitalia.svg" alt="Alitalia" class="airline-img alitalia img-fluid" />
+        </div>
+    </div>
+</section>
+    <!-- subscribe -->
+<section class="subscribe container text-center py-5">
+    <div class="subscribe-bg rounded-4 p-5 d-flex flex-column align-items-center justify-content-center">
+        <img src="assets/email/telegram.svg" class="rounded-circle position-absolute"
+            style="top: -20px; right: 120px; width: 50px; height: 50px;" alt="User" />
+        <h4 class="mb-4" data-i18n="subscribeText">
+            Subscribe to get information, latest news and other interesting offers about Jadoo
+        </h4>
+
+        <form class="d-flex justify-content-center flex-wrap" id="subscribeForm">
+            <div class="input-group mb-2 mb-md-0" style="width: 300px;">
+                <span class="input-group-text bg-white border-end-0">
+                    <i class="bi bi-envelope"></i>
+                </span>
+                <input type="text" class="form-control border-start-0" placeholder=""
+                    data-i18n-placeholder="subscribeNamePlaceholder" required />
+            </div>
+            <button type="submit" class="btn btn-warning rounded-3 px-4 py-2 ms-2" data-i18n="subscribeButton">
+                Subscribe
+            </button>
+        </form>
+
+    </div>
+</section>
+ <!-- footer -->
+<footer class="footer  text-center text-md-start py-5 border-top">
+    <div class="container">
+        <div class="row">
+            <!-- Logo -->
+            <div class="col-md-3 mb-3">
+                <h2 class="fw-bold">Jadoo.</h2>
+                <p class=" small" data-i18n="footerDesc">
+                    Book your trip in minutes, get full control for much longer.
+                </p>
+            </div>
+
+            <!-- Company -->
+            <div class="col-md-2 mb-3">
+                <h6 class="fw-bold" data-i18n="footerCompany">Company</h6>
+                <ul class="list-footer small">
+                    <li><a href="#" class="text-muted text-decoration-none" data-i18n="footerAbout">About</a></li>
+                    <li><a href="#" class="text-muted text-decoration-none" data-i18n="footerCareers">Careers</a></li>
+                    <li><a href="#" class="text-muted text-decoration-none" data-i18n="footerMobile">Mobile</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact -->
+            <div class="col-md-2 mb-3">
+                <h6 class="fw-bold" data-i18n="footerContact">Contact</h6>
+                <ul class="list-footer small">
+                    <li><a href="#" class="text-muted text-decoration-none" data-i18n="footerHelp">Help/FAQ</a></li>
+                    <li><a href="#" class="text-muted text-decoration-none" data-i18n="footerPress">Press</a></li>
+                    <li><a href="#" class="text-muted text-decoration-none" data-i18n="footerAffiliates">Affiliates</a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- More -->
+            <div class="col-md-2 mb-3">
+                <h6 class="fw-bold" data-i18n="footerMore">More</h6>
+                <ul class="list-footer small">
+                    <li><a href="#" class="text-muted text-decoration-none" data-i18n="footerAirlineFees">Airline
+                            Fees</a></li>
+                    <li><a href="#" class="text-muted text-decoration-none" data-i18n="footerAirline">Airline</a></li>
+                    <li><a href="#" class="text-muted text-decoration-none" data-i18n="footerLowFareTips">Low Fare
+                            Tips</a></li>
+                </ul>
+            </div>
+
+            <!-- Social icons + Apps -->
+            <div class="col-md-2 mb-3 d-flex flex-column align-items-start gap-2">
+                <!-- Social icons -->
+                <div class="d-flex gap-2 mb-2">
+                    <!-- Facebook -->
+                    <a href="#">
+                        <span class="social-icon d-flex justify-content-center align-items-center">
+                            <img src="assets/footer/Facebook Icon.svg" alt="Facebook" width="15" height="15">
+                        </span>
+                    </a>
+
+                    <!-- Instagram -->
+                    <a href="#">
+                        <span class="social-icon instagram-bg d-flex justify-content-center align-items-center">
+                            <img src="assets/footer/instagram.svg" alt="Instagram" width="15" height="15">
+                        </span>
+                    </a>
+
+                    <!-- Twitter -->
+                    <a href="#">
+                        <span class="social-icon d-flex justify-content-center align-items-center">
+                            <img src="assets/footer/twitter.svg" alt="Twitter" width="15" height="15">
+                        </span>
+                    </a>
+                </div>
+                <p class="text-muted large" data-i18n="footerDiscover">
+                    Discover our app
+                </p>
+                <!-- App Store , Google Play -->
+                <div class="d-flex gap-2">
+                    <img src="assets/footer/Play Store.svg" width="100" alt="App Store" />
+                    <img src="assets/footer/Google Play.svg" width="100" alt="Google Play" />
+                </div>
+            </div>
 
 
-    <div id="category-container"></div>
-    <div id="destinations-container"></div>
-    <div id="booking-container"></div>
-    <div id="testimonials-container"></div>
-    <div id="airlines-container"></div>
-    <div id="subscribe-container"></div>
-    <div id="footer-container"></div>
+        </div>
+    </div>
 
-  
+    <div class="text-center mt-4 small text-muted" data-i18n="footerCopyright">
+        © All rights reserved | Jadoo.co
+    </div>
+    </div>
+</footer>
+
+    <!-- scripts -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js/loadPartials.js"></script>
+
+    <script>
+        let translations = {};
+
+        async function loadTranslations() {
+            try {
+                const res = await fetch("js/translations.json");
+                translations = await res.json();
+            } catch (err) {
+                console.error("Failed to load translations:", err);
+            }
+        }
+
+        function translatePage(lang) {
+            if (!translations[lang]) return;
+
+            document.querySelectorAll("[data-i18n]").forEach(el => {
+                const key = el.getAttribute("data-i18n");
+                if (translations[lang][key]) el.textContent = translations[lang][key];
+            });
+
+            document.querySelectorAll("[data-i18n-placeholder]").forEach(el => {
+                const key = el.getAttribute("data-i18n-placeholder");
+                if (translations[lang][key]) el.placeholder = translations[lang][key];
+            });
+
+            document.documentElement.setAttribute("dir", lang === "ar" ? "rtl" : "ltr");
+            document.documentElement.setAttribute("lang", lang);
+            localStorage.setItem("lang", lang);
+        }
+
+        function applyTheme(theme) {
+            document.documentElement.setAttribute("data-theme", theme);
+            localStorage.setItem("theme", theme);
+        }
+
+        document.addEventListener("DOMContentLoaded", async () => {
+            await loadTranslations();
+
+            let currentLang = localStorage.getItem("lang") || "en";
+            let currentTheme = localStorage.getItem("theme") || "light";
+
+            translatePage(currentLang);
+            applyTheme(currentTheme);
+
+            new Swiper(".myTestimonials", {
+                direction: "vertical",
+                loop: true,
+                slidesPerView: 1,
+                autoplay: { delay: 3000, disableOnInteraction: false },
+                navigation: { nextEl: ".custom-next", prevEl: ".custom-prev" },
+                pagination: { el: ".testimonials .swiper-pagination", clickable: true },
+            });
+
+            const langBtn = document.getElementById("langToggle");
+            const themeBtn = document.getElementById("themeToggle");
+
+            if (langBtn) {
+                langBtn.textContent = translations[currentLang]?.language || "EN";
+                langBtn.addEventListener("click", () => {
+                    currentLang = currentLang === "en" ? "ar" : "en";
+                    translatePage(currentLang);
+                    langBtn.textContent = translations[currentLang].language;
+                });
+            }
+
+            if (themeBtn) {
+                themeBtn.addEventListener("click", () => {
+                    currentTheme = currentTheme === "light" ? "dark" : "light";
+                    applyTheme(currentTheme);
+                });
+            }
+        });
+    </script>
 </body>
 
 </html>

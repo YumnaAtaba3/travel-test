@@ -1,8 +1,8 @@
-let translations = {}; 
+let translations = {};
 
 async function loadTranslations() {
   try {
-    const res = await fetch("js/translations.json"); 
+    const res = await fetch("js/translations.json");
     translations = await res.json();
   } catch (err) {
     console.error("Failed to load translations:", err);
@@ -22,14 +22,8 @@ function translatePage(lang) {
     if (translations[lang][key]) el.placeholder = translations[lang][key];
   });
 
-  if (lang === "ar") {
-    document.documentElement.setAttribute("dir", "rtl");
-    document.documentElement.setAttribute("lang", "ar");
-  } else {
-    document.documentElement.setAttribute("dir", "ltr");
-    document.documentElement.setAttribute("lang", "en");
-  }
-
+  document.documentElement.setAttribute("dir", lang === "ar" ? "rtl" : "ltr");
+  document.documentElement.setAttribute("lang", lang);
   localStorage.setItem("lang", lang);
 }
 
@@ -38,43 +32,22 @@ function applyTheme(theme) {
   localStorage.setItem("theme", theme);
 }
 
-document.addEventListener("DOMContentLoaded", async function () {
+document.addEventListener("DOMContentLoaded", async () => {
   await loadTranslations();
 
   let currentLang = localStorage.getItem("lang") || "en";
   let currentTheme = localStorage.getItem("theme") || "light";
 
-  const partials = [
-    { id: "header-container", file: "partials/header.html" },
-    { id: "category-container", file: "partials/category.html" },
-    { id: "destinations-container", file: "partials/destinations.html" },
-    { id: "booking-container", file: "partials/booking.html" },
-    { id: "testimonials-container", file: "partials/testimonials.html" },
-    { id: "airlines-container", file: "partials/airlines.html" },
-    { id: "subscribe-container", file: "partials/subscribe.html" },
-    { id: "footer-container", file: "partials/footer.html" },
-  ];
-
-  for (const { id, file } of partials) {
-    try {
-      const res = await fetch(file);
-      const html = await res.text();
-      document.getElementById(id).innerHTML = html;
-    } catch (err) {
-      console.error(`Failed to load ${file}:`, err);
-    }
-  }
-
   translatePage(currentLang);
   applyTheme(currentTheme);
 
-  
   new Swiper(".myTestimonials", {
     direction: "vertical",
     loop: true,
     slidesPerView: 1,
     autoplay: { delay: 3000, disableOnInteraction: false },
     navigation: { nextEl: ".custom-next", prevEl: ".custom-prev" },
+    pagination: { el: ".testimonials .swiper-pagination", clickable: true },
   });
 
   const langBtn = document.getElementById("langToggle");

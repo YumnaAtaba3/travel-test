@@ -112,6 +112,7 @@ html[dir="rtl"] .nav li:first-child {
 .Language .btn-light:hover,
 .btn.btn-light[data-bs-toggle="offcanvas"]:hover {
     color: var(--accent-color) !important;
+    
 }
 
 
