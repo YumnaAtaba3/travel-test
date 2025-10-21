@@ -333,7 +333,10 @@
   }
 
 
-
+.offcanvas-title {
+    background-color: var(--card-bg);
+    border-bottom: 1px solid var(--accent-color);
+    padding: 1rem 1.5rem;       }
 
   [dir="ltr"] .subscribe .input-group {
       order: 0;

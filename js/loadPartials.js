@@ -47,6 +47,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
   const partials = [
     { id: "header-container", file: "partials/header.html" },
+    { id: "category-container", file: "partials/category.html" },
     { id: "destinations-container", file: "partials/destinations.html" },
     { id: "booking-container", file: "partials/booking.html" },
     { id: "testimonials-container", file: "partials/testimonials.html" },
