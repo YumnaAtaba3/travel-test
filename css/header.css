@@ -185,7 +185,7 @@ html[dir="rtl"] .nav li:first-child {
 .offcanvas-body a:hover {
     color: var(--accent-color);
 }
-/* Move close button to the far end in RTL */
+
 [dir="rtl"] .offcanvas-header {
     flex-direction: row-reverse;
     justify-content: space-around;
@@ -193,9 +193,8 @@ html[dir="rtl"] .nav li:first-child {
 
 [dir="rtl"] .offcanvas-header .btn-close {
     margin-left: 0;
-    /* Remove any left spacing */
     margin-right: 0;
-    /* Optional: ensure it aligns exactly at the end */
+   
 }
 html[dir="rtl"] header::before {
     left: auto;
