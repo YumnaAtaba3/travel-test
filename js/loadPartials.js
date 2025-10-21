@@ -39,7 +39,6 @@ function applyTheme(theme) {
 }
 
 document.addEventListener("DOMContentLoaded", async function () {
-  // Load translations first
   await loadTranslations();
 
   let currentLang = localStorage.getItem("lang") || "en";
