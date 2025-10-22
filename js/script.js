@@ -36,10 +36,10 @@ function applyTheme(theme) {
 
   if (theme === "dark") {
     themeIcon.classList.remove("bi-moon-fill");
-    themeIcon.classList.add("bi-sun-fill"); // show sun in dark mode
+    themeIcon.classList.add("bi-sun-fill"); 
   } else {
     themeIcon.classList.remove("bi-sun-fill");
-    themeIcon.classList.add("bi-moon-fill"); // show moon in light mode
+    themeIcon.classList.add("bi-moon-fill");
   }
 }
 
