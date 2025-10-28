@@ -106,7 +106,7 @@ new Swiper(".myTestimonials", {
 ### 🔧 1. Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/travel-landing.git
+git clone https://github.com/YumnaAtaba3/travel-landing.git
 cd travel-landing
 ```
 
